@@ -5,12 +5,23 @@ class FeedsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text('Search Page'),
+        middle: Text('Feeds Page'),
       ),
       child: Center(
-        child: Text(
-          'Search Page',
-          style: CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Feeds Page',
+              style:
+                  CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            CupertinoButton.filled(
+                child: const Text('Select Category'), onPressed: () {}),
+          ],
         ),
       ),
     );

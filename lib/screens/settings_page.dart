@@ -5,11 +5,11 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text('Search Page'),
+        middle: Text('Settings Page'),
       ),
       child: Center(
         child: Text(
-          'Search Page',
+          'Settings Page',
           style: CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
         ),
       ),
