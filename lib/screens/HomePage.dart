@@ -9,6 +9,11 @@ class HomePage extends StatelessWidget {
         navigationBar: CupertinoNavigationBar(
           middle: Text('Cupertino App'),
         ),
-        child: Container());
+        child: Center(
+          child: Text(
+            'Home Page',
+            style: CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+          ),
+        ));
   }
 }
