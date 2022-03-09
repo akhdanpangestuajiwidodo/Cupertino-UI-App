@@ -1,4 +1,8 @@
+import 'package:cupertino_ui_app/screens/search_page.dart';
+import 'package:cupertino_ui_app/screens/settings_page.dart';
 import 'package:flutter/cupertino.dart';
+
+import 'feeds_page.dart';
 
 class NewHomePage extends StatelessWidget {
   const NewHomePage({Key? key}) : super(key: key);
@@ -20,15 +24,15 @@ class NewHomePage extends StatelessWidget {
           ],
         ),
         tabBuilder: (context, index) {
-          switch(index){
+          switch (index) {
             case 0:
-            return FeedsPage();
+              return FeedsPage();
             case 1:
               return SearchPage();
             case 2:
               return SettingsPage();
             default:
-              return Center(
+              return const Center(
                 child: Text('Page not found!'),
               );
           }
