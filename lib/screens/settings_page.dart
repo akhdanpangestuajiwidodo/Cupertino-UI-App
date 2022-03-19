@@ -8,9 +8,9 @@ class SettingsPage extends StatelessWidget {
         middle: Text('Settings Page'),
       ),
       child: Center(
-        child: Text(
-          'Settings Page',
-          style: CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+        child: CupertinoButton(
+          child: Text('Log out'),
+          onPressed: () {},
         ),
       ),
     );

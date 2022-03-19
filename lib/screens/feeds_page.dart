@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+import 'CategoryPage.dart';
+
 class FeedsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,59 @@ class FeedsPage extends StatelessWidget {
               height: 8,
             ),
             CupertinoButton.filled(
-                child: const Text('Select Category'), onPressed: () {}),
+              child: const Text('Select Category'),
+              onPressed: () {
+                showCupertinoModalPopup(
+                    context: context,
+                    builder: (context) {
+                      return CupertinoActionSheet(
+                        title: Text('Select Categories'),
+                        actions: [
+                          CupertinoActionSheetAction(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) => CategoryPage(
+                                      selectedCategory: 'Technology'),
+                                ),
+                              );
+                            },
+                            child: Text('Technology'),
+                          ),
+                          CupertinoActionSheetAction(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) => CategoryPage(
+                                      selectedCategory: 'Business'),
+                                ),
+                              );
+                            },
+                            child: Text('Business'),
+                          ),
+                          CupertinoActionSheetAction(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) =>
+                                      CategoryPage(selectedCategory: 'Sport'),
+                                ),
+                              );
+                            },
+                            child: Text('Sport'),
+                          ),
+                        ],
+                        cancelButton: CupertinoActionSheetAction(
+                          child: Text('Close'),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      );
+                    });
+              },
+            ),
           ],
         ),
       ),
